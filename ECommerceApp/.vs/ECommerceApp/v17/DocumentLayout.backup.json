@@ -1,0 +1,461 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\repository\\shoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\repository\\shoppingcartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\services\\shoppingcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\services\\shoppingcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\models\\querymodel\\cartitemsquerymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\models\\querymodel\\cartitemsquerymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\dtos\\shoppingcartdtos\\addtocartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\dtos\\shoppingcartdtos\\addtocartdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\repository\\shoppingcartrepository.cs~rf1c729791.tmp||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\repository\\shoppingcartrepository.cs~rf1c729791.tmp||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\dtos\\shoppingcartdtos\\cartitemresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\dtos\\shoppingcartdtos\\cartitemresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\dtos\\shoppingcartdtos\\cartresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\dtos\\shoppingcartdtos\\cartresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\dtos\\shoppingcartdtos\\updatecartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\dtos\\shoppingcartdtos\\updatecartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\dtos\\shoppingcartdtos\\removecartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\dtos\\shoppingcartdtos\\removecartitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\dtos\\customerdtos\\changepassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\dtos\\customerdtos\\changepassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\repository\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\repository\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|c:\\users\\priyadarshani\\downloads\\ecommerce_asp.net\\ecommerceapp\\ecommerceapp\\services\\addressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BD461A15-68DC-4195-B0B3-FABA5BB303D6}|ECommerceApp\\ECommerceApp.csproj|solutionrelative:ecommerceapp\\services\\addressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 143,
+          "SelectedChildIndex": 15,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1709528779:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:254354193:0:{71f361cc-493f-47c0-923f-f2570b6f8618}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1139089979:0:{71f361cc-493f-47c0-923f-f2570b6f8618}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1100106937:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:693125831:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:505619844:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:323948898:0:{81164725-9a96-4ece-a4cb-440d8fd285e5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1735645259:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cf577b8c-4134-11d2-83e5-00c04f9902c1}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Services\\ProductService.cs",
+              "RelativeToolTip": "ECommerceApp\\Services\\ProductService.cs",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAWwKoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T07:33:40.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShoppingCartRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Repository\\ShoppingCartRepository.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Repository\\ShoppingCartRepository.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Repository\\ShoppingCartRepository.cs",
+              "RelativeToolTip": "ECommerceApp\\Repository\\ShoppingCartRepository.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAQwHoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T07:33:23.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ShoppingCartRepository.cs~RF1c729791.TMP",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Repository\\ShoppingCartRepository.cs~RF1c729791.TMP",
+              "RelativeDocumentMoniker": "ECommerceApp\\Repository\\ShoppingCartRepository.cs~RF1c729791.TMP",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Repository\\ShoppingCartRepository.cs~RF1c729791.TMP",
+              "RelativeToolTip": "ECommerceApp\\Repository\\ShoppingCartRepository.cs~RF1c729791.TMP",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAkwH4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-04T07:32:10.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Program.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Program.cs",
+              "RelativeToolTip": "ECommerceApp\\Program.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAH8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T18:34:59.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CustomersController.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Controllers\\CustomersController.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Controllers\\CustomersController.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Controllers\\CustomersController.cs",
+              "RelativeToolTip": "ECommerceApp\\Controllers\\CustomersController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAjwC0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T18:34:55.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Repository\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Repository\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Repository\\ProductRepository.cs",
+              "RelativeToolTip": "ECommerceApp\\Repository\\ProductRepository.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAjwDwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T18:34:55.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Repository\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Repository\\CustomerRepository.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Repository\\CustomerRepository.cs",
+              "RelativeToolTip": "ECommerceApp\\Repository\\CustomerRepository.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAIAzwBkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T18:34:55.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "RemoveCartItemDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\DTOs\\ShoppingCartDTOs\\RemoveCartItemDTO.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\DTOs\\ShoppingCartDTOs\\RemoveCartItemDTO.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\DTOs\\ShoppingCartDTOs\\RemoveCartItemDTO.cs",
+              "RelativeToolTip": "ECommerceApp\\DTOs\\ShoppingCartDTOs\\RemoveCartItemDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T13:58:04.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UpdateCartItemDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\DTOs\\ShoppingCartDTOs\\UpdateCartItemDTO.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\DTOs\\ShoppingCartDTOs\\UpdateCartItemDTO.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\DTOs\\ShoppingCartDTOs\\UpdateCartItemDTO.cs",
+              "RelativeToolTip": "ECommerceApp\\DTOs\\ShoppingCartDTOs\\UpdateCartItemDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T13:57:56.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CartResponseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\DTOs\\ShoppingCartDTOs\\CartResponseDTO.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\DTOs\\ShoppingCartDTOs\\CartResponseDTO.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\DTOs\\ShoppingCartDTOs\\CartResponseDTO.cs",
+              "RelativeToolTip": "ECommerceApp\\DTOs\\ShoppingCartDTOs\\CartResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T13:57:34.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CartItemResponseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\DTOs\\ShoppingCartDTOs\\CartItemResponseDTO.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\DTOs\\ShoppingCartDTOs\\CartItemResponseDTO.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\DTOs\\ShoppingCartDTOs\\CartItemResponseDTO.cs",
+              "RelativeToolTip": "ECommerceApp\\DTOs\\ShoppingCartDTOs\\CartItemResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T13:57:31.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AddToCartDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\DTOs\\ShoppingCartDTOs\\AddToCartDTO.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\DTOs\\ShoppingCartDTOs\\AddToCartDTO.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\DTOs\\ShoppingCartDTOs\\AddToCartDTO.cs",
+              "RelativeToolTip": "ECommerceApp\\DTOs\\ShoppingCartDTOs\\AddToCartDTO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T13:57:30.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ChangePasswordDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\DTOs\\CustomerDTOs\\ChangePasswordDTO.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\DTOs\\CustomerDTOs\\ChangePasswordDTO.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\DTOs\\CustomerDTOs\\ChangePasswordDTO.cs",
+              "RelativeToolTip": "ECommerceApp\\DTOs\\CustomerDTOs\\ChangePasswordDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T13:57:18.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Models\\Cart.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Models\\Cart.cs",
+              "RelativeToolTip": "ECommerceApp\\Models\\Cart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T13:52:17.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Models\\CartItem.cs",
+              "RelativeToolTip": "ECommerceApp\\Models\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T08:36:14.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CartItemsQueryModel.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Models\\QueryModel\\CartItemsQueryModel.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Models\\QueryModel\\CartItemsQueryModel.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Models\\QueryModel\\CartItemsQueryModel.cs",
+              "RelativeToolTip": "ECommerceApp\\Models\\QueryModel\\CartItemsQueryModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T13:51:15.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Services\\CustomerService.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Services\\CustomerService.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Services\\CustomerService.cs",
+              "RelativeToolTip": "ECommerceApp\\Services\\CustomerService.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAuwDoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T07:38:43.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CartsController.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Controllers\\CartsController.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Controllers\\CartsController.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Controllers\\CartsController.cs*",
+              "RelativeToolTip": "ECommerceApp\\Controllers\\CartsController.cs*",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAtwBEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T07:37:42.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "ECommerceApp\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAQwF8AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T07:37:38.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Repository\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Repository\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Repository\\CategoryRepository.cs",
+              "RelativeToolTip": "ECommerceApp\\Repository\\CategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T07:37:09.195Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AddressService.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Services\\AddressService.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Services\\AddressService.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Services\\AddressService.cs",
+              "RelativeToolTip": "ECommerceApp\\Services\\AddressService.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAABgAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-03T07:37:05.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShoppingCartService.cs",
+              "DocumentMoniker": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Services\\ShoppingCartService.cs",
+              "RelativeDocumentMoniker": "ECommerceApp\\Services\\ShoppingCartService.cs",
+              "ToolTip": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\Services\\ShoppingCartService.cs",
+              "RelativeToolTip": "ECommerceApp\\Services\\ShoppingCartService.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAtwB0AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T14:14:38.509Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 106,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:952421293:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:493069858:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{131369f2-062d-44a2-8671-91ff31efb4f4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1342775388:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

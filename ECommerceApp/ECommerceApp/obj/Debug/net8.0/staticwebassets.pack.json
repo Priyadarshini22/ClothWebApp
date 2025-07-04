@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\wwwroot\\images\\2ae8063d-593b-4486-b885-181b2310f98e.PNG",
+      "PackagePath": "staticwebassets\\images\\2ae8063d-593b-4486-b885-181b2310f98e.PNG"
+    },
+    {
+      "Id": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\wwwroot\\images\\5037524e-9095-4346-b7d8-8a06a1b06b88.PNG",
+      "PackagePath": "staticwebassets\\images\\5037524e-9095-4346-b7d8-8a06a1b06b88.PNG"
+    },
+    {
+      "Id": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\wwwroot\\images\\9e2b7d45-5312-4fcf-9f6e-f9eb84b9fa88.PNG",
+      "PackagePath": "staticwebassets\\images\\9e2b7d45-5312-4fcf-9f6e-f9eb84b9fa88.PNG"
+    },
+    {
+      "Id": "C:\\Users\\Priyadarshani\\Downloads\\Ecommerce_Asp.NET\\ECommerceApp\\ECommerceApp\\wwwroot\\images\\fb19e0cd-f417-47b3-8eca-9de9e4d260a9.PNG",
+      "PackagePath": "staticwebassets\\images\\fb19e0cd-f417-47b3-8eca-9de9e4d260a9.PNG"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ECommerceApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ECommerceApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ECommerceApp.props",
+      "PackagePath": "build\\ECommerceApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ECommerceApp.props",
+      "PackagePath": "buildMultiTargeting\\ECommerceApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ECommerceApp.props",
+      "PackagePath": "buildTransitive\\ECommerceApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
