@@ -1,4 +1,0 @@
-wwwroot\images\2ae8063d-593b-4486-b885-181b2310f98e.PNG
-wwwroot\images\5037524e-9095-4346-b7d8-8a06a1b06b88.PNG
-wwwroot\images\9e2b7d45-5312-4fcf-9f6e-f9eb84b9fa88.PNG
-wwwroot\images\fb19e0cd-f417-47b3-8eca-9de9e4d260a9.PNG

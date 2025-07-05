@@ -5208,7 +5208,7 @@
         ]
       },
       "restoreAuditProperties": {
-        "enableAudit": "True",
+        "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
       },
