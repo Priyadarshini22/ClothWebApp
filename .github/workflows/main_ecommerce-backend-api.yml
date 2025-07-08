@@ -21,13 +21,13 @@ jobs:
           dotnet-version: '8.0'
 
       - name: Restore dependencies
-        run: dotnet restore ECommerceApp/ECommerceApp.sln
+        run: dotnet restore ECommerceApp/ECommerceApp/ECommerceApp.csproj
 
       - name: Build with dotnet
-        run: dotnet build ECommerceApp/ECommerceApp.sln --configuration Release --no-restore
+        run: dotnet build ECommerceApp/ECommerceApp/ECommerceApp.csproj --configuration Release --no-restore
 
       - name: Publish app
-        run: dotnet publish ECommerceApp/ECommerceApp.sln -c Release -o ./publish
+        run: dotnet publish ECommerceApp/ECommerceApp/ECommerceApp.csproj -c Release -o ./publish
 
       - name: Upload artifact for deployment
         uses: actions/upload-artifact@v4
@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'ecommerce-backend-api'
           slot-name: 'Production'
-          package: .
+          package: ./publish
