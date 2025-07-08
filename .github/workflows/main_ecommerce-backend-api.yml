@@ -21,13 +21,13 @@ jobs:
           dotnet-version: '8.0'
 
       - name: Restore dependencies
-        run: dotnet restore EcommerceApp/EcommerceApp.sln
+        run: dotnet restore ECommerceApp/ECommerceApp.sln
 
       - name: Build with dotnet
-        run: dotnet build EcommerceApp/EcommerceApp.sln --configuration Release --no-restore
+        run: dotnet build ECommerceApp/ECommerceApp.sln --configuration Release --no-restore
 
       - name: Publish app
-        run: dotnet publish EcommerceApp/EcommerceApp.sln -c Release -o ./publish
+        run: dotnet publish ECommerceApp/ECommerceApp.sln -c Release -o ./publish
 
       - name: Upload artifact for deployment
         uses: actions/upload-artifact@v4
