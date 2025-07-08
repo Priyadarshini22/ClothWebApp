@@ -43,17 +43,16 @@ namespace ECommerceApp.Controllers
             return Ok(response);
         }
 
-        // Updates the quantity of an existing cart item.
-        //[HttpPut("UpdateCartItem")]
-        //public async Task<ActionResult<ApiResponse<CartResponseDTO>>> UpdateCartItem([FromBody] UpdateCartItemDTO updateCartItemDTO)
-        //{
-        //    var response = await _shoppingCartService.UpdateCartItemAsync(updateCartItemDTO);
-        //    if (response.StatusCode != 200)
-        //    {
-        //        return StatusCode(response.StatusCode, response);
-        //    }
-        //    return Ok(response);
-        //}
+        [HttpPut("UpdateCartItem")]
+        public async Task<ActionResult<ApiResponse<CartResponseDTO>>> UpdateCartItem([FromBody] UpdateCartItemDTO updateCartItemDTO)
+        {
+            var response = await _shoppingCartService.UpdateCartItemAsync(updateCartItemDTO);
+            if (response.StatusCode != 200)
+            {
+                return StatusCode(response.StatusCode, response);
+            }
+            return Ok(response);
+        }
 
         //// Removes a specific item from the cart.
         //[HttpDelete("RemoveCartItem")]

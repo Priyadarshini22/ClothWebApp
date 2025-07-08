@@ -1,14 +1,17 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { removeItemFromCart, updateCartItemQuantity } from '../reduxStore/cartSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateCartItem } from '../reduxStore/cartSlice';
+// import { removeItemFromCart, updateCartItemQuantity } from '../reduxStore/cartSlice';
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
 
+  const cart = useSelector((state) => state.cart.cart);
+
   const handleQuantityChange = (delta) => {
     const newQuantity = item.Quantity + delta;
     if (newQuantity < 1) return;
-    // dispatch(updateCartItemQuantity({ id: item.Id, quantity: newQuantity }));
+    dispatch(updateCartItem({...item,CustomerId : cart.CustomerId, CartItemId: item.Id, Quantity: newQuantity, TotalPrice : (item.UnitPrice - item.Discount)*newQuantity}))
   };
 
   const handleRemove = () => {

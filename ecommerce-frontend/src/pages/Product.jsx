@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import {  useParams } from 'react-router-dom';
 import { fetchProductById } from '../reduxStore/productsSlice';
@@ -9,25 +9,31 @@ import { ToastContainer } from 'react-toastify';
 const Product = () => {
   const { Id } = useParams();
 
-  // const [size,setSize] = useState();
+  const [addToCartbtn,setAddToCartBtn] = useState(false);
 
   const product = useSelector((state) => state.products.product);
+  const cart = useSelector((state) => state.cart.cart);
   const customer = useSelector((state) => state.customer.customer);
   const dispatch = useDispatch();
 
   useEffect(() => {
    dispatch(fetchProductById(Id));
+   console.log(cart)
+   cart?.CartItems?.filter(item => item.ProductId == Id).length>0  ? setAddToCartBtn(true) : setAddToCartBtn(false);
    console.log(product)
   },[])
 
   const handleAddToCart = () => {
-
-
+    var discount = product.DiscountPercentage > 0 ? product.Price * product.DiscountPercentage / 100 : 0;
     dispatch(addToCart({
         CustomerId: customer.CustomerId,
-  ProductId: product.Id,
-  Quantity: 1
-    }, customer.Token));
+        ProductId: product.Id,
+        Quantity: 1,
+        UnitPrice : product.Price,
+        Discount: discount,
+        Id: cart?.Id ?? 0,
+        TotalPrice: (product.Price - discount) * 1, 
+  }, customer.Token));
   }
 
   return (
@@ -60,20 +66,22 @@ const Product = () => {
        <p className='text-zinc-500  mt-5 font-medium text-xl'>${product.Description}</p>
       </div>
        <p className='mt-5'>Select Size</p>
-       <div className='mt-10 flex gap-2'>
-         {product.ProductSizes?.map((item) => (
-  <button
-    key={item.Size}
-    className={`border py-2 px-4 ${
-      item.Quantity === 0 ? 'bg-gray-300 line-through cursor-not-allowed' : 'bg-gray-100'
-    }`}
-    disabled={item.Quantity === 0}
-  >
-    {item.Size}
-  </button>
-))}
-       </div>
-       <button className='bg-black text-white font-medium px-5 py-2 mt-10' onClick={handleAddToCart} type='submit'>ADD TO CART</button>
+       <div className="mt-10 flex gap-2">
+  {product.ProductSizes?.map((item) => (
+    <button
+      key={item.Size}
+      className={`border py-2 px-4 rounded transition ${
+        item.Quantity === 0
+          ? 'bg-gray-300 text-gray-500 line-through cursor-not-allowed'
+          : 'bg-gray-100 hover:bg-gray-200'
+      }`}
+      disabled={item.Quantity === 0}
+    >
+      {item.Size}
+    </button>
+  ))}
+</div>
+       <button className={`${addToCartbtn ? 'bg-gray-100 text-black' : 'bg-black text-white' }  font-medium px-5 py-2 mt-10`} onClick={handleAddToCart} type='submit' disabled={addToCartbtn}>ADD TO CART</button>
      </div>
      <ToastContainer/>
     </div>

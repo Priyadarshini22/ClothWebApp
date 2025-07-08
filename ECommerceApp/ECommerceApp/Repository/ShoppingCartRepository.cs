@@ -12,9 +12,10 @@ namespace ECommerceApp.Repository
 
     public interface IShoppingCartRepository
     {
-        Task<bool> AddToCartAsync(Cart addToCartDTO);
-        Task<bool> UpdateCartItemAsync(CartItem updateCartDTO);
+        Task<bool> AddToCartAsync(AddToCartDTO addToCartDTO);
+        Task<bool> UpdateCartItemAsync(UpdateCartItemDTO updateCartDTO);
         Task<CartResponseDTO> GetCartByCustomerIdAsync(int customerId);
+        Task<CartItemResponseDTO> GetCartItemById(int Id);
     }
     public class ShoppingCartRepository : IShoppingCartRepository
     {
@@ -23,7 +24,7 @@ namespace ECommerceApp.Repository
 
         public ShoppingCartRepository(IDapperDbConnection dbContext) => _dbContext = dbContext;
 
-        public async Task<bool> AddToCartAsync(Cart addToCartDTO)
+        public async Task<bool> AddToCartAsync(AddToCartDTO addToCartDTO)
         {
             using var dbConnection = _dbContext.CreateConnection();
             dbConnection.Open();
@@ -37,7 +38,7 @@ namespace ECommerceApp.Repository
                     cartId = await dbConnection.QuerySingleAsync<int>(sQuery, new
                     {
                         addToCartDTO.CustomerId,
-                        addToCartDTO.IsCheckedOut,
+                        IsCheckedOut = false,
                         CreatedAt = DateTime.Now,
                         UpdatedAt = DateTime.Now,
 
@@ -55,21 +56,19 @@ namespace ECommerceApp.Repository
                     }, transaction);
                 }
 
-                foreach (var cartItem in addToCartDTO.CartItems)
+                var cartItemInsertQuery = $"insert into CartItems values(@CartId,@ProductId,@Quantity,@UnitPrice,@Discount,@TotalPrice,@CreatedAt,@UpdatedAt)";
+                var result = await dbConnection.ExecuteAsync(cartItemInsertQuery, new
                 {
-                    var cartItemInsertQuery = $"insert into CartItems values (@CartId, @ProductId, @Quantity, @UnitPrice, @Discount, @TotalPrice, @CreatedAt,@UpdatedAt)";
-                    var result = await dbConnection.ExecuteAsync(cartItemInsertQuery, new
-                    {
-                        cartId,
-                        cartItem.ProductId,
-                        cartItem.Quantity,
-                        cartItem.UnitPrice,
-                        cartItem.Discount,
-                        cartItem.TotalPrice,
-                        cartItem.CreatedAt,
-                        cartItem.UpdatedAt
-                    }, transaction);
-                }
+                    CartId = addToCartDTO.Id,
+                    addToCartDTO.ProductId,
+                    addToCartDTO.Quantity,
+                    addToCartDTO.UnitPrice,
+                    addToCartDTO.Discount,
+                    addToCartDTO.TotalPrice,
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow,
+                }, transaction);
+
                 transaction.Commit();
 
                 return true;
@@ -125,18 +124,31 @@ namespace ECommerceApp.Repository
 
         }
 
-        public async Task<bool> UpdateCartItemAsync(CartItem updateCartDTO)
+        public async Task<bool> UpdateCartItemAsync(UpdateCartItemDTO updateCartDTO)
         {
             using var dbConnection = _dbContext.CreateConnection();
             dbConnection.Open();
-            var cartItemInsertQuery = $"insert into CartItems values (@Quantity, @TotalPrice, @UpdatedAt)";
+            var cartItemInsertQuery = $"update CartItems set Quantity = @Quantity, TotalPrice = @TotalPrice, UpdatedAt =@UpdatedAt where ID = @Id";
             var result = await dbConnection.ExecuteAsync(cartItemInsertQuery, new
             {
                 updateCartDTO.Quantity,
                 updateCartDTO.TotalPrice,
-                updateCartDTO.UpdatedAt
+                UpdatedAt = DateTime.UtcNow,
+                Id = updateCartDTO.CartItemId
             });
             return result > 0;
+        }
+
+        public async Task<CartItemResponseDTO> GetCartItemById(int Id)
+        {
+            using var dbConnection = _dbContext.CreateConnection();
+            dbConnection.Open();
+            var cartItemfetchQuery = $"Select * CartItems where Id = @Id";
+            var result = await dbConnection.QuerySingleAsync<CartItemResponseDTO>(cartItemfetchQuery, new
+            {
+                Id
+            });
+            return result;
         }
     }
 

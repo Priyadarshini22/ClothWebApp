@@ -2,6 +2,7 @@
 using ECommerceApp.Data;
 using ECommerceApp.DTOs.ProductDTOs;
 using ECommerceApp.Models;
+using ECommerceApp.Models.QueryModel;
 
 namespace ECommerceApp.Repository
 {
@@ -105,15 +106,41 @@ namespace ECommerceApp.Repository
             using var dbConnection = _dbContext.CreateConnection();
             dbConnection.Open();
 
-            var sQuery = "select * from Products where ID = @id";
-            var product = await dbConnection.QueryFirstAsync<Product>(sQuery, new { id });
-            if (product != null)
+            var sQuery = "select p.Id,p.Name,p.Description,p.Price,p.StockQuantity, p.DiscountPercentage, p.IsAvailable, p.CategoryId, p.Image1, p.Image2,ps.Id as SizeId , ps.Size,ps.Quantity from Products p left join ProductSizes ps on p.Id = ps.ProductId where p.ID = @id";
+            var product = await dbConnection.QueryAsync<ProductQueryModel>(sQuery, new { id });
+
+            return product.GroupBy(group => new
             {
-                var productSizeQuery = @"select * from ProductSizes where Productid = @productId";
-                var productSizes = await dbConnection.QueryAsync<ProductSize>(productSizeQuery, new { productId = product.Id });
-                product.ProductSizes = productSizes;
-            }
-            return product;
+                group.Id,
+                group.Name,
+                group.Description,
+                group.Price,
+                group.StockQuantity,
+                group.DiscountPercentage,
+                group.IsAvailable,
+                group.CategoryId,
+                group.Image1,
+                group.Image2,
+            }).Select(item => new Product
+            {
+                Id = item.Key.Id,
+                Name = item.Key.Name,
+                Description = item.Key.Description,
+                Price = item.Key.Price,
+                StockQuantity = item.Key.StockQuantity,
+                DiscountPercentage = item.Key.DiscountPercentage,
+                IsAvailable = item.Key.IsAvailable,
+                CategoryId = item.Key.CategoryId,
+                Image1 = item.Key.Image1,
+                Image2 = item.Key.Image2,
+                ProductSizes = item.Select(size => new ProductSize
+                {
+                    Id = size.SizeId,
+                    ProductId = item.Key.Id,
+                    Size = size.Size,
+                    Quantity = size.Quantity,
+                })
+            }).FirstOrDefault();
         }
         public async Task<bool> UpdateProduct(ProductUpdateDTO product)
         {

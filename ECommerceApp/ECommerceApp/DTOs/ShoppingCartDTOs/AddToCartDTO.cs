@@ -5,6 +5,8 @@ namespace ECommerceApp.DTOs.ShoppingCartDTOs
     // DTO for adding an item to the cart
     public class AddToCartDTO
     {
+        public  int Id { get; set; }
+
         [Required(ErrorMessage = "CustomerId is required.")]
         public int CustomerId { get; set; }
 
@@ -14,5 +16,8 @@ namespace ECommerceApp.DTOs.ShoppingCartDTOs
         [Required(ErrorMessage = "Quantity is required.")]
         [Range(1, 100, ErrorMessage = "Quantity must be between 1 and 100.")]
         public int Quantity { get; set; }
+        public decimal UnitPrice { get; set; }
+        public decimal Discount { get; set; }
+        public decimal TotalPrice { get; set; }
     }
 }

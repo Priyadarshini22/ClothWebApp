@@ -15,6 +15,7 @@ import { useDispatch } from 'react-redux'
 import Register from './pages/Register'
 import { setCustomer } from './reduxStore/customerSlice'
 import CreateProduct from './pages/CreateProduct'
+import { getCartByCustomerId } from './reduxStore/cartSlice'
 
 
 const App = () => {
@@ -25,9 +26,13 @@ const App = () => {
     useEffect(() => {
     const customerData = localStorage.getItem("customer");
     if (customerData != null && customerData != undefined && customerData != "undefined") {
-      dispatch(setCustomer(JSON.parse(customerData)));
+      var customerDataObject = JSON.parse(customerData);
+      dispatch(setCustomer(customerDataObject));
+      console.log(customerDataObject.CustomerId)
+      dispatch(getCartByCustomerId(customerDataObject.CustomerId))
     }
-  }, [dispatch]);
+    
+  }, []);
   
   return (
     <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>

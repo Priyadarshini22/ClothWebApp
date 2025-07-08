@@ -32,6 +32,22 @@ export const addToCart = (cart, token) => async () => {
   }
 };
 
+export const updateCartItem = (cartItem, token) => async (dispatch) => {
+  console.log(cartItem,token);
+  try {
+    const res = await axios.put("https://localhost:7117/api/Carts/UpdateCartItem",cartItem, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    console.log('updateCart',res)
+    dispatch(getCartByCustomerId(cartItem.CustomerId))
+  } catch (err) {
+    console.error("Error fetching products", err);
+  }
+};
+
+
 export const getCartByCustomerId = (customerId,token ) => async (dispatch) => 
 {
     try {
