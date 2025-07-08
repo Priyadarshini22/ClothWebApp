@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const API_BASE_URL = import.meta.env.API_BASE_URL;
 
 export const customerSlice = createSlice({
     name: "customer",
@@ -10,7 +11,7 @@ export const customerSlice = createSlice({
     },
     reducers:{
        setCustomer: (state,action) => {
-            state.customer = action.payload
+            state.customer = action.payload 
        },
        setLoader: (state,action) => {
         state.loader = action.payload
@@ -25,7 +26,7 @@ export const {setCustomer, setLoader} = customerSlice.actions
 export const registerCustomer = (newCustomer,navigate) => async () => {
 
   try {
-     await axios.post("https://localhost:7117/api/Customers/RegisterCustomer",newCustomer);
+     await axios.post(`${API_BASE_URL}/api/Customers/RegisterCustomer`,newCustomer);
      navigate('/login');
   } catch (err) {
     console.error("Error fetching products", err);
@@ -35,7 +36,7 @@ export const registerCustomer = (newCustomer,navigate) => async () => {
 export const loginCustomer = (existCustomer) => async (dispatch) => {
 
   try {
-    const res = await axios.post("https://localhost:7117/api/Customers/Login",existCustomer);
+    const res = await axios.post(`${API_BASE_URL}/api/Customers/Login`,existCustomer);
     console.log(res);
     localStorage.setItem("customer", JSON.stringify(res.data));  // Save user data in localStorage
     dispatch(setCustomer(res.data))

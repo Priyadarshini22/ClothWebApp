@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const API_BASE_URL = import.meta.env.API_BASE_URL;
 
 export const cartSlice = createSlice({
     name: "cart",
@@ -21,7 +22,7 @@ export const {setCarts} = cartSlice.actions
 export const addToCart = (cart, token) => async () => {
   console.log(cart,token);
   try {
-    const res = await axios.post("https://localhost:7117/api/Carts/AddToCart",cart, {
+    const res = await axios.post(`${API_BASE_URL}/api/Carts/AddToCart`,cart, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -35,7 +36,7 @@ export const addToCart = (cart, token) => async () => {
 export const updateCartItem = (cartItem, token) => async (dispatch) => {
   console.log(cartItem,token);
   try {
-    const res = await axios.put("https://localhost:7117/api/Carts/UpdateCartItem",cartItem, {
+    const res = await axios.put(`${API_BASE_URL}/api/Carts/UpdateCartItem`,cartItem, {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -51,7 +52,7 @@ export const updateCartItem = (cartItem, token) => async (dispatch) => {
 export const getCartByCustomerId = (customerId,token ) => async (dispatch) => 
 {
     try {
-    const res = await axios.get(`https://localhost:7117/api/Carts/GetCart/${customerId}`, {
+    const res = await axios.get(`${API_BASE_URL}/api/Carts/GetCart/${customerId}`, {
       headers: {
         Authorization: `Bearer ${token}`
       }

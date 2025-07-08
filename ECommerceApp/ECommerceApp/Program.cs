@@ -23,7 +23,7 @@ namespace ECommerceApp
                 options.AddPolicy("AllowReactApp",
                     policy =>
                     {
-                        policy.WithOrigins("http://localhost:5173") // React dev server
+                        policy.WithOrigins("https://ambitious-field-03c216a1e.2.azurestaticapps.net") // React dev server
                               .AllowAnyHeader()
                               .AllowAnyMethod();
                     });

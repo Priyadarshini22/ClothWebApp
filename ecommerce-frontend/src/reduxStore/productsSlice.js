@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // import { products } from "../assets/assets";
 import axios from "axios";
 
+const API_BASE_URL = import.meta.env.API_BASE_URL;
 
 export const productsSlice = createSlice({
     name: "products",
@@ -31,7 +32,7 @@ export const {setProducts,setProduct,setCategories} = productsSlice.actions
 export const fetchProductsFromAPI = () => async (dispatch) => {
 
   try {
-    const res = await axios.get("https://localhost:7117/api/Products/GetAllProducts");
+    const res = await axios.get(`${API_BASE_URL}/api/Products/GetAllProducts`);
     console.log('fetch',res.data.Data)
     setProducts(res.data.Data)
     dispatch(setProducts(res.data.Data));
@@ -44,7 +45,7 @@ export const fetchProductsFromAPI = () => async (dispatch) => {
 export const fetchProductById = (id) => async(dispatch) => {
 
    try{
-      const res = await axios.get(`https://localhost:7117/api/Products/GetProductById/${id}`);
+      const res = await axios.get(`${API_BASE_URL}/api/Products/GetProductById/${id}`);
       dispatch(setProduct(res.data.Data));
    }
    catch (err) {
@@ -57,7 +58,7 @@ export const createProduct = (product, token, navigate) => async (dispatch) => {
   console.log(token)
   console.log(product);
   try{
-      const res = await axios.post("https://localhost:7117/api/Products/CreateProduct",product, {
+      const res = await axios.post(`${API_BASE_URL}/api/Products/CreateProduct`,product, {
       headers: {
          Authorization: `Bearer ${token}`,
       }});
@@ -79,7 +80,7 @@ export const createProduct = (product, token, navigate) => async (dispatch) => {
 
 export const getProductCategories = () =>  async (dispatch)  => {
   try{
-      const res = await axios.get("https://localhost:7117/api/Categories/GetAllCategories");
+      const res = await axios.get(`${API_BASE_URL}/api/Categories/GetAllCategories`);
       // dispatch(setProduct(res.data.Data));
       dispatch(setCategories(res.data.Data));
       return res;
