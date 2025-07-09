@@ -11,7 +11,7 @@
         public bool Success { get; set; }
 
         // Response data in case successful
-        public T Data { get; set; }
+        public T? Data { get; set; }
 
         // List of error messages, if any.
         public List<string> Errors { get; set; }

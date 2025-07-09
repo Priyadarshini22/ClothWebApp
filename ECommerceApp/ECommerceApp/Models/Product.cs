@@ -36,10 +36,10 @@ namespace ECommerceApp.Models
         public int CategoryId { get; set; }
 
         [ForeignKey("CategoryId")]
-        public Category Category { get; set; }
-        public ICollection<OrderItem> OrderItems { get; set; }
-        public ICollection<Feedback> Feedbacks { get; set; }
-        public IEnumerable<ProductSize> ProductSizes { get; set; }
+        public Category? Category { get; set; }
+        public ICollection<OrderItem>? OrderItems { get; set; }
+        public ICollection<Feedback>? Feedbacks { get; set; }
+        public IEnumerable<ProductSize>? ProductSizes { get; set; }
 
     }
 }
