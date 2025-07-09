@@ -24,11 +24,11 @@ namespace ECommerceApp.Services
         {
             var claims = new[]
             {
-            new Claim(ClaimTypes.Email, customer.Email),
-            new Claim(ClaimTypes.Role, customer.Role)
+            new Claim(ClaimTypes.Email, customer.Email ?? ""),
+            new Claim(ClaimTypes.Role, customer.Role ?? "")
         };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"] ?? "Default"));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
