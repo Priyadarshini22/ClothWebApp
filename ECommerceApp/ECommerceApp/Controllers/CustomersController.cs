@@ -44,10 +44,6 @@ namespace ECommerceApp.Controllers
         public async Task<ActionResult<ApiResponse<LoginResponseDTO>>> Login([FromBody] LoginDTO loginDto)
         {
             var response = await _customerService.LoginAsync(loginDto);
-            if (response.StatusCode != 200)
-            {
-                return StatusCode((int)response.StatusCode, response);
-            }
 
             if(response.Success && response.Data != null)
             {
@@ -62,6 +58,10 @@ namespace ECommerceApp.Controllers
                     Message = "Login successful"
                 };
                 return Ok(responseDto);
+            }
+            else
+            {
+                return StatusCode((int)response.StatusCode, response);
             }
         }
 
