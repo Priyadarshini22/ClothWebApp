@@ -13,7 +13,7 @@ namespace ECommerceApp.DTOs.PaymentDTOs
 
         [Required(ErrorMessage = "Payment Method is required.")]
         [StringLength(50)]
-        public string PaymentMethod { get; set; } // e.g., "CreditCard", "DebitCard", "PayPal", "COD"
+        public string? PaymentMethod { get; set; } // e.g., "CreditCard", "DebitCard", "PayPal", "COD"
 
         [Required(ErrorMessage = "Amount is required.")]
         [Range(0.01, double.MaxValue, ErrorMessage = "Amount must be greater than zero.")]

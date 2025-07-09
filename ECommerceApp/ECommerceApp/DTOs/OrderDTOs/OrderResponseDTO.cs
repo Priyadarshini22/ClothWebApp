@@ -6,7 +6,7 @@ namespace ECommerceApp.DTOs.OrderDTOs
     public class OrderResponseDTO
     {
         public int Id { get; set; }
-        public string OrderNumber { get; set; }
+        public string? OrderNumber { get; set; }
         public DateTime OrderDate { get; set; }
         public int CustomerId { get; set; }
         public int BillingAddressId { get; set; }
@@ -16,6 +16,6 @@ namespace ECommerceApp.DTOs.OrderDTOs
         public decimal ShippingCost { get; set; }
         public decimal TotalAmount { get; set; }
         public OrderStatus OrderStatus { get; set; }
-        public List<OrderItemResponseDTO> OrderItems { get; set; }
+        public List<OrderItemResponseDTO>? OrderItems { get; set; }
     }
 }

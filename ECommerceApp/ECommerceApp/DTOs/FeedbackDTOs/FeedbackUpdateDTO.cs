@@ -15,6 +15,6 @@ namespace ECommerceApp.DTOs.FeedbackDTOs
         public int Rating { get; set; }
 
         [StringLength(1000, ErrorMessage = "Comment cannot exceed 1000 characters.")]
-        public string Comment { get; set; }
+        public string? Comment { get; set; }
     }
 }
