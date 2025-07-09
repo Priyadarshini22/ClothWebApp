@@ -8,11 +8,11 @@ namespace ECommerceApp.DTOs.ProductDTOs
 
         [Required(ErrorMessage = "Product Name is required.")]
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Product Name must be between 3 and 100 characters.")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [Required(ErrorMessage = "Description is required.")]
         [MinLength(10, ErrorMessage = "Description must be at least 10 characters.")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [Range(0.01, 10000.00, ErrorMessage = "Price must be between $0.01 and $10,000.00.")]
         public decimal Price { get; set; }
@@ -21,7 +21,7 @@ namespace ECommerceApp.DTOs.ProductDTOs
         public int StockQuantity { get; set; }
 
         [Required(ErrorMessage = "At least one image is required.")]
-        public string Image1 { get; set; }  // Required
+        public string? Image1 { get; set; }  // Required
 
         public string? Image2 { get; set; }  // Optional
 

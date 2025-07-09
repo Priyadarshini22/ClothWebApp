@@ -6,6 +6,6 @@ namespace ECommerceApp.DTOs.RefundDTOs
     {
         public bool IsSuccess { get; set; }
         public RefundStatus Status { get; set; }
-        public string TransactionId { get; set; }
+        public string? TransactionId { get; set; }
     }
 }

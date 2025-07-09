@@ -11,7 +11,7 @@ namespace ECommerceApp.DTOs.RefundDTOs
 
         [StringLength(100, ErrorMessage = "Transaction ID cannot exceed 100 characters.")]
         [Required(ErrorMessage = "TransactionId is required.")]
-        public string TransactionId { get; set; }
+        public string? TransactionId { get; set; }
 
         [Required(ErrorMessage = "Refund Method is required.")]
         public RefundMethod RefundMethod { get; set; }
