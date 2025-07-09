@@ -37,6 +37,7 @@ namespace ECommerceApp
                 options.JsonSerializerOptions.PropertyNamingPolicy = null;
             });
 
+            builder.Services.AddHealthChecks();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -53,6 +54,7 @@ namespace ECommerceApp
             {
                 options.MultipartBodyLengthLimit = 104857600; // 100 MB
             });
+
 
             builder.Services.AddAuthentication(options =>
             {
