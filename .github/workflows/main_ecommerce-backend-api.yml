@@ -50,6 +50,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: backend-app
+          path: ./publish 
+
+      - name: Verify publish directory contents in deploy job (for debugging)
+        run: ls -R ./publish
 
       - name: Login to Azure
         uses: azure/login@v2
