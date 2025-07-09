@@ -17,7 +17,7 @@ namespace ECommerceApp.DTOs.ProductDTOs
         public bool IsAvailable { get; set; }
         public string Image1 { get; set; }  // Required
         public string? Image2 { get; set; }  // Optional
-        public IEnumerable<ProductSize> ProductSizes { get; set; }
+        public IEnumerable<ProductSize>? ProductSizes { get; set; }
 
     }
 }
