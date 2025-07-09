@@ -29,6 +29,9 @@ jobs:
       - name: Publish app
         run: dotnet publish ECommerceApp/ECommerceApp/ECommerceApp.csproj -c Release -o ./publish
 
+      - name: List publish directory contents
+        run: ls -R ./publish 
+  
       - name: Upload artifact for deployment
         uses: actions/upload-artifact@v4
         with:
