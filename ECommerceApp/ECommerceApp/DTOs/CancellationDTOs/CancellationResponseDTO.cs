@@ -7,7 +7,7 @@ namespace ECommerceApp.DTOs.CancellationDTOs
     {
         public int Id { get; set; }
         public int OrderId { get; set; }
-        public string Reason { get; set; }
+        public string? Reason { get; set; }
         public CancellationStatus Status { get; set; }
         public DateTime RequestedAt { get; set; }
         public DateTime? ProcessedAt { get; set; }

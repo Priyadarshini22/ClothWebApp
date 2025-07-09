@@ -23,7 +23,7 @@ namespace ECommerceApp.Services
             try
             {
                 // Check if product name already exists (case-insensitive)
-                if (await _productRepository.CheckProductNameExists(productDto.Name))
+                if (await _productRepository.CheckProductNameExists(productDto.Name ?? ""))
                 {
                     return new ApiResponse<bool>(400, "Product name already exists.");  
                 }
@@ -133,7 +133,7 @@ namespace ECommerceApp.Services
             {
                 var product = await _productRepository.DeleteProduct(id);
 
-                if (product == null)
+                if (product)
                 {
                     return new ApiResponse<ConfirmationResponseDTO>(404, "Product not found.");
                 }

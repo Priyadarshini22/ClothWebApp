@@ -10,12 +10,12 @@ namespace ECommerceApp.Models
         // Foreign key to Customer
         [Required]
         public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public Customer? Customer { get; set; }
 
         // Foreign key to Product
         [Required]
         public int ProductId { get; set; }
-        public Product Product { get; set; }
+        public Product? Product { get; set; }
 
         // Rating between 1 and 5
         [Required]

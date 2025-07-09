@@ -13,14 +13,14 @@ namespace ECommerceApp.Models
         public int CancellationId { get; set; }
 
         [ForeignKey("CancellationId")]
-        public Cancellation Cancellation { get; set; }
+        public Cancellation? Cancellation { get; set; }
 
         // Foreign key to Payment
         [Required(ErrorMessage = "Payment ID is required.")]
         public int PaymentId { get; set; }
 
         [ForeignKey("PaymentId")]
-        public Payment Payment { get; set; }
+        public Payment? Payment { get; set; }
 
         // Amount to be refunded
         [Range(0.01, 100000.00, ErrorMessage = "Refund amount must be between $0.01 and $100,000.00.")]
@@ -32,7 +32,7 @@ namespace ECommerceApp.Models
         public RefundStatus Status { get; set; }
 
         [Required]
-        public string RefundMethod { get; set; }
+        public string? RefundMethod { get; set; }
 
         [StringLength(500, ErrorMessage = "Refund Reason cannot exceed 500 characters.")]
         public string? RefundReason { get; set; }

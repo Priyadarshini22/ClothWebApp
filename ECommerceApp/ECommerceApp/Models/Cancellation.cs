@@ -13,12 +13,12 @@ namespace ECommerceApp.Models
         public int OrderId { get; set; }
 
         [ForeignKey("OrderId")]
-        public Order Order { get; set; }
+        public Order? Order { get; set; }
 
         // Reason for cancellation
         [Required(ErrorMessage = "Cancellation reason is required.")]
         [StringLength(500, ErrorMessage = "Cancellation reason cannot exceed 500 characters.")]
-        public string Reason { get; set; }
+        public string? Reason { get; set; }
 
         // Status of the cancellation request
         [Required]
@@ -46,6 +46,6 @@ namespace ECommerceApp.Models
         public string? Remarks { get; set; }
 
         //Reference Navigation Property
-        public Refund Refund { get; set; }
+        public Refund? Refund { get; set; }
     }
 }

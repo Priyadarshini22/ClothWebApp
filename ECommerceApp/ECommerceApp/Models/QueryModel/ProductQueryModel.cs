@@ -16,7 +16,7 @@ namespace ECommerceApp.Models.QueryModel
         public byte[]? Image2 { get; set; }
         public int CategoryId { get; set; }
         public int SizeId { get; set; }
-        public string Size { get; set; }
+        public string? Size { get; set; }
         public int Quantity { get; set; }
     }
 }

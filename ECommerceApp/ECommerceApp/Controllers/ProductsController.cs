@@ -53,11 +53,11 @@ namespace ECommerceApp.Controllers
                 CategoryId = productDto.CategoryId,
                 Image1 = image1Bytes,
                 Image2 = image2Bytes,
-                ProductSizes = JsonSerializer.Deserialize<Dictionary<string, int>>(StockBySize).Select(s => new ProductSize
+                ProductSizes = (StockBySize != null ? JsonSerializer.Deserialize<Dictionary<string, int>>(StockBySize): null)?.Select(s => new ProductSize
                 {
                     Size = s.Key,
                     Quantity = s.Value
-                }).ToList()
+                }).ToList() ?? new List<ProductSize>()
             };
 
             var result = await _productService.CreateProductAsync(product);

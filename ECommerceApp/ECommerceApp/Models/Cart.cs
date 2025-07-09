@@ -10,7 +10,7 @@ namespace ECommerceApp.Models
         public int CustomerId { get; set; }
 
         [ForeignKey("CustomerId")]
-        public Customer Customer { get; set; }
+        public Customer? Customer { get; set; }
 
         public bool IsCheckedOut { get; set; } = false;
 
@@ -20,6 +20,6 @@ namespace ECommerceApp.Models
         [Required]
         public DateTime UpdatedAt { get; set; }
 
-        public ICollection<CartItem> CartItems { get; set; }
+        public ICollection<CartItem>? CartItems { get; set; }
     }
 }

@@ -13,6 +13,6 @@ namespace ECommerceApp.DTOs.CancellationDTOs
 
         [Required(ErrorMessage = "Cancellation reason is required.")]
         [StringLength(500, ErrorMessage = "Cancellation reason cannot exceed 500 characters.")]
-        public string Reason { get; set; }
+        public string? Reason { get; set; }
     }
 }

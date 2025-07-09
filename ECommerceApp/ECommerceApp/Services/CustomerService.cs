@@ -24,7 +24,7 @@ namespace ECommerceApp.Services
             try
             {
                 // Check if email already exists
-                if (await _customerRepository.CheckCustomerEmailExists(customerDto.Email))
+                if (await _customerRepository.CheckCustomerEmailExists(customerDto.Email ?? ""))
                 {
                     return new ApiResponse<bool>(400, "Email is already in use.");
                 }
@@ -56,7 +56,7 @@ namespace ECommerceApp.Services
         {
             try
             {
-                var customer = await _customerRepository.GetExistingCustomer(loginDto.Email);
+                var customer = await _customerRepository.GetExistingCustomer(loginDto.Email ?? "");
 
                 if (customer == null)
                 {
@@ -128,7 +128,7 @@ namespace ECommerceApp.Services
                 }
 
                 // Check if email is being updated to an existing one
-                if (customer.Email != customerDto.Email && await _customerRepository.CheckCustomerEmailExists(customerDto.Email))
+                if (customer.Email != customerDto.Email && await _customerRepository.CheckCustomerEmailExists(customerDto.Email ?? ""))
                 {
                     return new ApiResponse<ConfirmationResponseDTO>(400, "Email is already in use.");
                 }

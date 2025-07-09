@@ -73,10 +73,10 @@ namespace ECommerceApp.Repository
 
                 return true;
             }
-            catch (Exception er)
+            catch (Exception)
             {
                 transaction.Rollback();
-                throw er;
+                throw;
 
             }
 
@@ -120,7 +120,7 @@ namespace ECommerceApp.Repository
                     Discount = item.Discount,
                     Quantity = item.Quantity,
                 }).ToList()
-            }).FirstOrDefault();
+            }).FirstOrDefault() ?? new CartResponseDTO();
 
         }
 

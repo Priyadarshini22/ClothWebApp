@@ -10,7 +10,7 @@ namespace ECommerceApp.Models
 
         [Required]
         [StringLength(30, ErrorMessage = "Order Number cannot exceed 30 characters.")]
-        public string OrderNumber { get; set; }
+        public string? OrderNumber { get; set; }
 
         [Required]
         public DateTime OrderDate { get; set; }
@@ -20,20 +20,20 @@ namespace ECommerceApp.Models
         public int CustomerId { get; set; }
 
         [ForeignKey("CustomerId")]
-        public Customer Customer { get; set; }
+        public Customer? Customer { get; set; }
 
         // Foreign keys to Addresses
         [Required(ErrorMessage = "Billing Address ID is required.")]
         public int BillingAddressId { get; set; }
 
         [ForeignKey("BillingAddressId")]
-        public Address BillingAddress { get; set; }
+        public Address? BillingAddress { get; set; }
 
         [Required(ErrorMessage = "Shipping Address ID is required.")]
         public int ShippingAddressId { get; set; }
 
         [ForeignKey("ShippingAddressId")]
-        public Address ShippingAddress { get; set; }
+        public Address? ShippingAddress { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18,2)")]
@@ -59,8 +59,8 @@ namespace ECommerceApp.Models
         public OrderStatus OrderStatus { get; set; }
 
         [Required]
-        public ICollection<OrderItem> OrderItems { get; set; }
-        public Payment Payment { get; set; } //Linked with Associated Payment
-        public Cancellation Cancellation { get; set; } //Linked with Associated Cancellation
+        public ICollection<OrderItem>? OrderItems { get; set; }
+        public Payment? Payment { get; set; } //Linked with Associated Payment
+        public Cancellation? Cancellation { get; set; } //Linked with Associated Cancellation
     }
 }

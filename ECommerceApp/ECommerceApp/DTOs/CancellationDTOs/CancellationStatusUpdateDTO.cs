@@ -19,6 +19,6 @@ namespace ECommerceApp.DTOs.CancellationDTOs
         public decimal? CancellationCharges { get; set; }
 
         [StringLength(500, ErrorMessage = "Remarks cannot exceed 500 characters.")]
-        public string Remarks { get; set; }
+        public string? Remarks { get; set; }
     }
 }

@@ -12,11 +12,11 @@ namespace ECommerceApp.Models
         public int OrderId { get; set; }
 
         [ForeignKey("OrderId")]
-        public Order Order { get; set; }
+        public Order? Order { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string PaymentMethod { get; set; } // e.g., "DebitCard", "CreditCard", "PayPal", "COD"
+        public string? PaymentMethod { get; set; } // e.g., "DebitCard", "CreditCard", "PayPal", "COD"
 
         [StringLength(50)]
         public string? TransactionId { get; set; } // From payment gateway
@@ -32,6 +32,6 @@ namespace ECommerceApp.Models
         [StringLength(20)]
         public PaymentStatus Status { get; set; } // "Completed", "Pending", "Failed", "Refunded"
 
-        public Refund Refund { get; set; } // Navigational property to Refund
+        public Refund? Refund { get; set; } // Navigational property to Refund
     }
 }

@@ -140,7 +140,7 @@ namespace ECommerceApp.Repository
                     Size = size.Size,
                     Quantity = size.Quantity,
                 })
-            }).FirstOrDefault();
+            }).FirstOrDefault() ?? new Product();
         }
         public async Task<bool> UpdateProduct(ProductUpdateDTO product)
         {
