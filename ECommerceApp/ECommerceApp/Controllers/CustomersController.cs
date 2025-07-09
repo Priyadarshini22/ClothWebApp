@@ -49,16 +49,20 @@ namespace ECommerceApp.Controllers
                 return StatusCode((int)response.StatusCode, response);
             }
 
-            // 3. Build the response
-            var responseDto = new LoginResponseDTO
+            if(response.Success && response.Data != null)
             {
-                CustomerId = response.Data.CustomerId,
-                CustomerName = response.Data.CustomerName,
-                Token = response.Data.Token,
-                Role = loginDto.Role,
-                Message = "Login successful"
-            };
-            return Ok(responseDto);
+
+                // 3. Build the response
+                var responseDto = new LoginResponseDTO
+                {
+                    CustomerId = response.Data.CustomerId,
+                    CustomerName = response.Data.CustomerName,
+                    Token = response.Data.Token,
+                    Role = loginDto.Role,
+                    Message = "Login successful"
+                };
+                return Ok(responseDto);
+            }
         }
 
         // Retrieves customer details by ID.
