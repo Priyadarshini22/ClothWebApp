@@ -16,6 +16,8 @@ namespace ECommerceApp.Repository
         Task<bool> UpdateCartItemAsync(UpdateCartItemDTO updateCartDTO);
         Task<CartResponseDTO> GetCartByCustomerIdAsync(int customerId);
         Task<CartItemResponseDTO> GetCartItemById(int Id);
+        Task<bool> UpdateCartAsync(int cartId);
+        Task<bool> RemoveCartItem(RemoveCartItemDTO removeCartItemDTO);
     }
     public class ShoppingCartRepository : IShoppingCartRepository
     {
@@ -47,8 +49,8 @@ namespace ECommerceApp.Repository
                 else
                 {
                     var sQuery = $"update Carts set UpdatedAt = @UpdatedAt where Id = @Id";
-
-                    cartId = await dbConnection.ExecuteAsync(sQuery, new
+                    cartId = addToCartDTO.Id;
+                    _ = await dbConnection.ExecuteAsync(sQuery, new
                     {
                         addToCartDTO.Id,
                         UpdatedAt = DateTime.Now,
@@ -56,10 +58,10 @@ namespace ECommerceApp.Repository
                     }, transaction);
                 }
 
-                var cartItemInsertQuery = $"insert into CartItems values(@CartId,@ProductId,@Quantity,@UnitPrice,@Discount,@TotalPrice,@CreatedAt,@UpdatedAt)";
+                var cartItemInsertQuery = $"insert into CartItems values(@CartId,@ProductId,@Quantity,@UnitPrice,@Discount,@TotalPrice,@CreatedAt,@UpdatedAt, @SizeId)";
                 var result = await dbConnection.ExecuteAsync(cartItemInsertQuery, new
                 {
-                    CartId = addToCartDTO.Id,
+                    CartId = cartId,
                     addToCartDTO.ProductId,
                     addToCartDTO.Quantity,
                     addToCartDTO.UnitPrice,
@@ -67,6 +69,7 @@ namespace ECommerceApp.Repository
                     addToCartDTO.TotalPrice,
                     CreatedAt = DateTime.UtcNow,
                     UpdatedAt = DateTime.UtcNow,
+                    addToCartDTO.SizeId
                 }, transaction);
 
                 transaction.Commit();
@@ -139,6 +142,17 @@ namespace ECommerceApp.Repository
             return result > 0;
         }
 
+        public async Task<bool> UpdateCartAsync(int cartId)
+        {
+            using var dbConnection = _dbContext.CreateConnection();
+            dbConnection.Open();
+            var cartItemInsertQuery = $"update Carts set IsCheckedOut =  @IsCheckedOut where ID = @cartId";
+            var result = await dbConnection.ExecuteAsync(cartItemInsertQuery, new { cartId , IsCheckedOut = true});
+            return result > 0;
+        }
+
+
+
         public async Task<CartItemResponseDTO> GetCartItemById(int Id)
         {
             using var dbConnection = _dbContext.CreateConnection();
@@ -149,6 +163,18 @@ namespace ECommerceApp.Repository
                 Id
             });
             return result;
+        }
+
+        public async Task<bool> RemoveCartItem(RemoveCartItemDTO removeCartItemDTO)
+        {
+            using var dbConnection = _dbContext.CreateConnection();
+            dbConnection.Open();
+            var cartItemfetchQuery = $"delete from CartItems where Id = @Id";
+            var result = await dbConnection.ExecuteAsync(cartItemfetchQuery, new
+            {
+                Id = removeCartItemDTO.CartItemId
+            });
+            return result >=1;
         }
     }
 

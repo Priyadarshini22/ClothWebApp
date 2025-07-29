@@ -191,50 +191,17 @@ namespace ECommerceApp.Services
         }
 
         //// Removes a specific item from the customer's cart.
-        //public async Task<ApiResponse<CartResponseDTO>> RemoveCartItemAsync(RemoveCartItemDTO removeCartItemDTO)
-        //{
-        //    try
-        //    {
-        //        // Retrieve the active cart along with its items and product details.
-        //        var cart = await _context.Carts
-        //            .Include(c => c.CartItems)
-        //                .ThenInclude(ci => ci.Product)
-        //            .FirstOrDefaultAsync(c => c.CustomerId == removeCartItemDTO.CustomerId && !c.IsCheckedOut);
-
-        //        // Return 404 if no active cart is found.
-        //        if (cart == null)
-        //        {
-        //            return new ApiResponse<CartResponseDTO>(404, "Active cart not found.");
-        //        }
-
-        //        // Find the cart item to remove.
-        //        var cartItem = cart.CartItems.FirstOrDefault(ci => ci.Id == removeCartItemDTO.CartItemId);
-        //        if (cartItem == null)
-        //        {
-        //            return new ApiResponse<CartResponseDTO>(404, "Cart item not found.");
-        //        }
-
-        //        // Remove the cart item from the context.
-        //        _context.CartItems.Remove(cartItem);
-        //        cart.UpdatedAt = DateTime.UtcNow;
-        //        await _context.SaveChangesAsync();
-
-        //        // Reload the updated cart after removal.
-        //        cart = await _context.Carts
-        //            .Include(c => c.CartItems)
-        //                .ThenInclude(ci => ci.Product)
-        //            .FirstOrDefaultAsync(c => c.Id == cart.Id) ?? new Cart();
-
-        //        // Map the updated cart to the DTO.
-        //        var cartDTO = MapCartToDTO(cart);
-        //        return new ApiResponse<CartResponseDTO>(200, cartDTO);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        // Return error response if an exception occurs.
-        //        return new ApiResponse<CartResponseDTO>(500, $"An unexpected error occurred while processing your request, Error: {ex.Message}");
-        //    }
-        //}
+        public async Task<ApiResponse<bool>> RemoveCartItemAsync(RemoveCartItemDTO removeCartItemDTO)
+        {
+            try { 
+                return new ApiResponse<bool>(200, _shoppingCartRepository.RemoveCartItem(removeCartItemDTO).Result);
+            }
+            catch (Exception ex)
+            {
+                // Return error response if an exception occurs.
+                return new ApiResponse<bool>(500, $"An unexpected error occurred while processing your request, Error: {ex.Message}");
+            }
+        }
 
         //// Clears all items from the customer's active cart.
         //public async Task<ApiResponse<ConfirmationResponseDTO>> ClearCartAsync(int customerId)

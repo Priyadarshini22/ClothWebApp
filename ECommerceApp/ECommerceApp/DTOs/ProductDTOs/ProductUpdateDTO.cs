@@ -21,9 +21,9 @@ namespace ECommerceApp.DTOs.ProductDTOs
         public int StockQuantity { get; set; }
 
         [Required(ErrorMessage = "At least one image is required.")]
-        public string? Image1 { get; set; }  // Required
+        public string? Image1 { get; set; }  
 
-        public string? Image2 { get; set; }  // Optional
+        public string? Image2 { get; set; }  
 
         [Range(0, 100, ErrorMessage = "Discount Percentage must be between 0% and 100%.")]
         public int DiscountPercentage { get; set; }

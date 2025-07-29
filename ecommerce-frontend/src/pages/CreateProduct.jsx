@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Title from '../components/Title';
-import { createProduct } from '../reduxStore/productsSlice';
+import { createProduct, setProductsLoader } from '../reduxStore/productsSlice';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -13,6 +13,7 @@ const CreateProduct = () => {
 
   const token = useSelector((state) => state.customer.customer.Token);
   const categories = useSelector((state) => state.products.categories);
+  const isLoading = useSelector((state) => state.products.loader);
 
   const [newSizeName, setNewSizeName] = useState("");
   const [newSizeQuantity, setNewSizeQuantity] = useState("");
@@ -23,6 +24,7 @@ const CreateProduct = () => {
     DiscountPercentage: "",
     CategoryId: "",
     StockBySize: {},
+    StockQuantity: 0,
     Images: [],
   });
 
@@ -71,6 +73,7 @@ const CreateProduct = () => {
   const handleSizeStockChange = (e) => {
   const { name, value } = e.target;
   console.log(name,value)
+  
   setFormData((prev) => ({
     ...prev,
     StockBySize: {
@@ -84,21 +87,27 @@ const CreateProduct = () => {
     console.log('Submit')
         console.log(formData)
     console.log(token)
+    const totalStock = Object.values(formData.StockBySize).reduce((acc, qty) => acc + qty, 0);
+    console.log(formData)
     if (!validate()) return;
 
+     dispatch(setProductsLoader(true))
     const multipartForm = new FormData();
     console.log(formData)
     console.log(token)
+
     Object.entries(formData).forEach(([key, value]) => {
       if (key === "Images") {
         value.forEach((file) => multipartForm.append("Images", file));
-      }  else if (key != "StockBySize") {
+      } else if (key !== "StockBySize" && key !== "StockQuantity") {
         multipartForm.append(key, value);
       }
     });
-
+    
+    // Only add derived stock quantity
+    multipartForm.append("StockQuantity", totalStock);
     multipartForm.append("StockBySize", JSON.stringify(formData.StockBySize));
-
+    console.log(multipartForm)
     console.log('multi',multipartForm);
     dispatch(createProduct(multipartForm, token, navigate));
     setFormData({
@@ -107,8 +116,10 @@ const CreateProduct = () => {
     Price: "",
     DiscountPercentage: "",
     CategoryId: "",
+    StockQuantity: 0,
     StockBySize: {},
     Images: [],
+
     });
   };
 
@@ -126,6 +137,7 @@ const CreateProduct = () => {
             placeholder="Product Name"
             value={formData.Name}
             onChange={handleChange}
+            disabled={isLoading}
             className="w-full px-3 py-2 border border-gray-300 rounded"
           />
           {errors.Name && <p className="text-red-500 text-sm mt-1">{errors.Name}</p>}
@@ -138,6 +150,7 @@ const CreateProduct = () => {
             placeholder="Description"
             value={formData.Description}
             onChange={handleChange}
+            disabled={isLoading}
             className="w-full px-3 py-2 border border-gray-300 rounded"
             rows={4}
           />
@@ -152,6 +165,7 @@ const CreateProduct = () => {
             placeholder="Price"
             value={formData.Price}
             onChange={handleChange}
+            disabled={isLoading}
             className="w-full px-3 py-2 border border-gray-300 rounded"
           />
           {errors.Price && <p className="text-red-500 text-sm mt-1">{errors.Price}</p>}
@@ -168,6 +182,7 @@ const CreateProduct = () => {
       type="text"
       placeholder="Size (e.g. XXXL)"
       value={newSizeName}
+      disabled={isLoading}
       onChange={(e) => setNewSizeName(e.target.value)}
       className="flex-1 px-3 py-2 border border-gray-300 rounded"
     />
@@ -175,6 +190,7 @@ const CreateProduct = () => {
       type="number"
       placeholder="Stock"
       value={newSizeQuantity}
+      disabled={isLoading}
       onChange={(e) => setNewSizeQuantity(e.target.value)}
       className="w-28 px-3 py-2 border border-gray-300 rounded"
       min={0}
@@ -224,6 +240,7 @@ const CreateProduct = () => {
         value={value}
         onChange={handleSizeStockChange}
         className="w-full px-3 py-2 border border-gray-300 rounded"
+        disabled={isLoading}
         min={0}
       />
       <button
@@ -287,9 +304,15 @@ const CreateProduct = () => {
         {/* Submit */}
         <button
           type="submit"
-          className="w-full bg-gray-800 text-white py-2 rounded hover:bg-gray-900"
+          disabled={isLoading}
+          className={`w-full bg-gray-800 text-white py-2 rounded flex justify-center items-center gap-2 ${
+            isLoading ? 'opacity-60 cursor-not-allowed' : 'hover:bg-gray-900'
+          }`}
         >
-          Create Product
+          {isLoading && (
+            <span className="animate-spin rounded-full h-4 w-4 border-t-2 border-white border-solid"></span>
+          )}
+          {isLoading ? 'Creating...' : 'Create Product'}
         </button>
       </form>
     </div>

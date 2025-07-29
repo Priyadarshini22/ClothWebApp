@@ -1,21 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateCartItem } from '../reduxStore/cartSlice';
+import { removeItemFromCart, updateCartItem } from '../reduxStore/cartSlice';
 // import { removeItemFromCart, updateCartItemQuantity } from '../reduxStore/cartSlice';
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
 
+  const [error, setError] = useState('');
+
   const cart = useSelector((state) => state.cart.cart);
+  const token = useSelector((state) => state.customer.customer.Token);
+  const customerId = useSelector((state) => state.customer.customer.CustomerId);
 
   const handleQuantityChange = (delta) => {
     const newQuantity = item.Quantity + delta;
-    if (newQuantity < 1) return;
+      if (newQuantity < 1) {
+      setError("You must order at least 1 item.");
+      return;
+    }
+
+    else if (newQuantity > item.ProductTotalQuantity) {
+      setError(`Only ${item.ProductTotalQuantity} ${item.ProductTotalQuantity === 1 ? 'item is' : 'items are'} left in stock.`);
+      return;
+    }
+    else { 
+      setError('')
     dispatch(updateCartItem({...item,CustomerId : cart.CustomerId, CartItemId: item.Id, Quantity: newQuantity, TotalPrice : (item.UnitPrice - item.Discount)*newQuantity}))
+    }
   };
 
   const handleRemove = () => {
-    // dispatch(removeItemFromCart(item.Id));
+    var Id = item.Id;
+    dispatch(removeItemFromCart(customerId, Id,token));
   };
 
   return (
@@ -44,7 +60,9 @@ const CartItem = ({ item }) => {
         <button onClick={handleRemove} className="text-red-500 text-sm underline">
           Remove
         </button>
+        {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
       </div>
+
     </div>
   );
 };

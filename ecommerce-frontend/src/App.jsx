@@ -16,6 +16,15 @@ import Register from './pages/Register'
 import { setCustomer } from './reduxStore/customerSlice'
 import CreateProduct from './pages/CreateProduct'
 import { getCartByCustomerId } from './reduxStore/cartSlice'
+import Checkout from './pages/Checkout'
+import AddAddress from './pages/AddAddress'
+import PaymentPage from './pages/PaymentPage'
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import { fetchProductsFromAPI } from './reduxStore/productsSlice'
+import Profile from './pages/Profile'
+
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 
 const App = () => {
@@ -24,6 +33,7 @@ const App = () => {
   const dispatch = useDispatch();
   
     useEffect(() => {
+               dispatch(fetchProductsFromAPI());
     const customerData = localStorage.getItem("customer");
     if (customerData != null && customerData != undefined && customerData != "undefined") {
       var customerDataObject = JSON.parse(customerData);
@@ -49,6 +59,11 @@ const App = () => {
       <Route path='/login' element={<Login/>} />
       <Route path='/place-order' element={<PlaceOrder/>} />
       <Route path='/orders' element={<Orders/>} />
+      <Route path='/checkout' element={<Checkout/>}/>
+      <Route path="/add-address" element={<AddAddress />} />
+      <Route path="/payment/:orderId"   element={<Elements stripe={stripePromise}><PaymentPage /></Elements>} />
+      <Route path="/profile" element={<Profile />} />
+
     </Routes>
     <ToastContainer/>
     </div>

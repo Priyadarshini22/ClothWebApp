@@ -147,7 +147,7 @@ namespace ECommerceApp.Repository
             using var dbConnection = _dbContext.CreateConnection();
             dbConnection.Open();
 
-            var sQuery = $"Update Products SET  Name = @Name, Description = @Description, Price @Price, StockQuantity =@StockQuantity, DiscountPercentage =@DiscountPercentage where ID = @Id";
+            var sQuery = $"Update Products SET  Name = @Name, Description = @Description, Price = @Price, StockQuantity =@StockQuantity, DiscountPercentage =@DiscountPercentage where ID = @Id";
             var result = await dbConnection.ExecuteAsync(sQuery, new { product.Name, product.Description, product.Price, product.StockQuantity, product.DiscountPercentage, product.Id });
 
             return result >= 1 ? true : false;
@@ -182,7 +182,7 @@ namespace ECommerceApp.Repository
 
             var sQuery = $"select * from Products where CategoryId = @categoryId";
             var result = await dbConnection.QueryAsync<ProductResponseDTO>(sQuery, new { categoryId});
-
+                
             return result.ToList();
         }
     }

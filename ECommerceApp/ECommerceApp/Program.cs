@@ -1,4 +1,5 @@
 using ECommerceApp.Data;
+using ECommerceApp.Repositories;
 using ECommerceApp.Repository;
 using ECommerceApp.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -23,7 +24,7 @@ namespace ECommerceApp
                 options.AddPolicy("AllowReactApp",
                     policy =>
                     {
-                        policy.WithOrigins("https://ambitious-field-03c216a1e.2.azurestaticapps.net") // React dev server
+                        policy.WithOrigins("https://ambitious-field-03c216a1e.2.azurestaticapps.net", "http://localhost:5173")
                               .AllowAnyHeader()
                               .AllowAnyMethod();
                     });
@@ -99,6 +100,17 @@ namespace ECommerceApp
             builder.Services.AddScoped<ShoppingCartService>();
             builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
 
+            builder.Services.AddScoped<AddressService>();
+            builder.Services.AddScoped<IAddressRepository, AddressRepository>();
+
+            builder.Services.AddScoped<OrderService>();
+            builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+
+            builder.Services.AddScoped<PaymentService>();
+            builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
+
+            builder.Services.AddScoped<EmailService>();
+            builder.Services.AddScoped<IEmailRepository, EmailRepository>();
 
             //// Registering the OrderService
             //builder.Services.AddScoped<OrderService>();

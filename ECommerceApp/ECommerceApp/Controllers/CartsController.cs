@@ -55,16 +55,16 @@ namespace ECommerceApp.Controllers
         }
 
         //// Removes a specific item from the cart.
-        //[HttpDelete("RemoveCartItem")]
-        //public async Task<ActionResult<ApiResponse<CartResponseDTO>>> RemoveCartItem([FromBody] RemoveCartItemDTO removeCartItemDTO)
-        //{
-        //    var response = await _shoppingCartService.RemoveCartItemAsync(removeCartItemDTO);
-        //    if (response.StatusCode != 200)
-        //    {
-        //        return StatusCode(response.StatusCode, response);
-        //    }
-        //    return Ok(response);
-        //}
+        [HttpDelete("RemoveCartItem")]
+        public async Task<ActionResult<ApiResponse<bool>>> RemoveCartItem([FromBody] RemoveCartItemDTO removeCartItemDTO)
+        {
+            var response = await _shoppingCartService.RemoveCartItemAsync(removeCartItemDTO);
+            if (response.StatusCode != 200)
+            {
+                return StatusCode(response.StatusCode, response);
+            }
+            return Ok(response);
+        }
 
         //// Clears all items from the customer's active cart.
         //[HttpDelete("ClearCart")]

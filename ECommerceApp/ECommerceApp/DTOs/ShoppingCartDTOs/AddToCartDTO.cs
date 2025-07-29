@@ -19,5 +19,6 @@ namespace ECommerceApp.DTOs.ShoppingCartDTOs
         public decimal UnitPrice { get; set; }
         public decimal Discount { get; set; }
         public decimal TotalPrice { get; set; }
+        public int SizeId { get; set; }
     }
 }

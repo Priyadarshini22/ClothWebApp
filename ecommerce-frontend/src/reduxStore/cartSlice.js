@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -19,7 +20,7 @@ export const cartSlice = createSlice({
 
 export const {setCarts} = cartSlice.actions
 
-export const addToCart = (cart, token) => async () => {
+export const addToCart = (cart, token, navigate) => async () => {
   console.log(cart,token);
   try {
     const res = await axios.post(`${API_BASE_URL}/api/Carts/AddToCart`,cart, {
@@ -28,7 +29,10 @@ export const addToCart = (cart, token) => async () => {
       }
     });
     console.log('cart',res)
+    toast.success("Added to Cart");
+    
   } catch (err) {
+    if(err.status == 401) navigate('/login');
     console.error("Error fetching products", err);
   }
 };
@@ -64,6 +68,25 @@ export const getCartByCustomerId = (customerId,token ) => async (dispatch) =>
   }
 }
 
+export const removeItemFromCart = (customerId, Id, token) => async (dispatch) => {
+  try {
+    const res = await axios.delete(`${API_BASE_URL}/api/Carts/RemoveCartItem`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+      data: {
+        CustomerId: customerId,
+        CartItemId: Id
+      }
+    });
+
+    console.log('cart', res);
+    dispatch(getCartByCustomerId(customerId, token));
+
+  } catch (err) {
+    console.error("Error removing item from cart", err);
+  }
+};
 
 export default cartSlice.reducer
 

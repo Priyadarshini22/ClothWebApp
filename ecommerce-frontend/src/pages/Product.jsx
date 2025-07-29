@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import {  useParams } from 'react-router-dom';
+import {  useNavigate, useParams } from 'react-router-dom';
 import { fetchProductById } from '../reduxStore/productsSlice';
 import { assets } from '../assets/assets';
 import { addToCart,  } from '../reduxStore/cartSlice';
@@ -8,13 +8,17 @@ import { ToastContainer } from 'react-toastify';
 
 const Product = () => {
   const { Id } = useParams();
+  const navigate = useNavigate();
 
   const [addToCartbtn,setAddToCartBtn] = useState(false);
 
   const product = useSelector((state) => state.products.product);
   const cart = useSelector((state) => state.cart.cart);
   const customer = useSelector((state) => state.customer.customer);
+  const [size,setSize] = useState(0);
   const dispatch = useDispatch();
+  console.log('Add',customer)
+  console.log(customer.Role)
 
   useEffect(() => {
    dispatch(fetchProductById(Id));
@@ -24,6 +28,7 @@ const Product = () => {
   },[])
 
   const handleAddToCart = () => {
+    console.log(cart)
     var discount = product.DiscountPercentage > 0 ? product.Price * product.DiscountPercentage / 100 : 0;
     dispatch(addToCart({
         CustomerId: customer.CustomerId,
@@ -33,7 +38,8 @@ const Product = () => {
         Discount: discount,
         Id: cart?.Id ?? 0,
         TotalPrice: (product.Price - discount) * 1, 
-  }, customer.Token));
+        SizeId: size
+  }, customer.Token, navigate));
   }
 
   return (
@@ -73,15 +79,19 @@ const Product = () => {
       className={`border py-2 px-4 rounded transition ${
         item.Quantity === 0
           ? 'bg-gray-300 text-gray-500 line-through cursor-not-allowed'
-          : 'bg-gray-100 hover:bg-gray-200'
+          : `bg-gray-100 hover:bg-gray-200 ${
+              size === item.Id ? 'border-green-500' : 'border-gray-300'
+            }`
       }`}
       disabled={item.Quantity === 0}
+      onClick={() => setSize(item.Id)}
     >
       {item.Size}
     </button>
   ))}
 </div>
-       <button className={`${addToCartbtn ? 'bg-gray-100 text-black' : 'bg-black text-white' }  font-medium px-5 py-2 mt-10`} onClick={handleAddToCart} type='submit' disabled={addToCartbtn}>ADD TO CART</button>
+     
+       <button className={`${addToCartbtn ||  customer.Role == 'admin' ? 'bg-gray-100 text-black' : 'bg-black text-white' }  font-medium px-5 py-2 mt-10`} onClick={handleAddToCart} type='submit' disabled={addToCartbtn || customer.Role == 'admin'}>ADD TO CART</button>
      </div>
      <ToastContainer/>
     </div>
