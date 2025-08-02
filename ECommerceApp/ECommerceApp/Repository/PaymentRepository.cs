@@ -38,7 +38,6 @@ namespace ECommerceApp.Repositories
             _dbContext = dbContext;
             _configuration = configuration;
 
-            StripeConfiguration.ApiKey = _configuration["Stripe:SecretKey"]; // ✅ Fix here
            // Optional to inject if needed
         }
 

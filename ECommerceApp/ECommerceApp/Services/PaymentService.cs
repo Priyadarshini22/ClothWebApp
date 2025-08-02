@@ -18,9 +18,6 @@ namespace ECommerceApp.Services
         {
             _paymentRepository = paymentRepository;
             _emailRepository = emailRepository;
-
-            StripeConfiguration.ApiKey = configuration["Stripe:SecretKey"];
-            _stripeChargeService = new Stripe.ChargeService();
         }
 
         public async Task<ApiResponse<PaymentResponseDTO>> ProcessPaymentAsync(PaymentRequestDTO paymentRequest)

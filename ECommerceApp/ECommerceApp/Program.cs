@@ -19,6 +19,8 @@ namespace ECommerceApp
 
             // Add services to the container.
 
+            var stripeSecretKey = builder.Configuration["Stripe:SecretKey"];
+            Console.WriteLine($"Stripe Secret Key loaded: {(string.IsNullOrEmpty(stripeSecretKey) ? "<empty>" : stripeSecretKey.Substring(0, 5) + "...")}");
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowReactApp",
