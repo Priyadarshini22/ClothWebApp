@@ -6,7 +6,9 @@ using ECommerceApp.Models;
 using ECommerceApp.Repository;
 using Microsoft.EntityFrameworkCore;
 using Stripe;
+using Stripe.Climate;
 using System.Security.Cryptography;
+using Order = ECommerceApp.Models.Order;
 
 namespace ECommerceApp.Services
 {
@@ -210,34 +212,17 @@ namespace ECommerceApp.Services
         //        }
         //    }
 
-        //    // Retrieves all orders associated with a specific customer.
-        //    public async Task<ApiResponse<List<OrderResponseDTO>>> GetOrdersByCustomerAsync(int customerId)
-        //    {
-        //        try
-        //        {
-        //            // Retrieve the customer along with their orders and related data.
-        //            var customer = await _context.Customers
-        //                .Include(c => c.Orders)
-        //                    .ThenInclude(o => o.OrderItems)
-        //                        .ThenInclude(oi => oi.Product)
-        //                .Include(c => c.Addresses)
-        //                .AsNoTracking()
-        //                .FirstOrDefaultAsync(c => c.Id == customerId);
-
-        //            if (customer == null)
-        //            {
-        //                return new ApiResponse<List<OrderResponseDTO>>(404, "Customer not found.");
-        //            }
-
-        //            // Map each order to a DTO.
-        //            var orders = customer.Orders.Select(o => MapOrderToDTO(o, customer, o.BillingAddress, o.ShippingAddress)).ToList();
-        //            return new ApiResponse<List<OrderResponseDTO>>(200, orders);
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            return new ApiResponse<List<OrderResponseDTO>>(500, $"An unexpected error occurred while processing your request, Error: {ex.Message}");
-        //        }
-        //    }
+        public async Task<ApiResponse<List<OrderResponseDTO>>> GetOrdersByCustomerAsync(int customerId)
+        {
+            try
+            {
+                return new ApiResponse<List<OrderResponseDTO>>(200, await _orderRepository.GetOrdersByCustomerAsync(customerId));
+            }
+            catch (Exception ex)
+            {
+                return new ApiResponse<List<OrderResponseDTO>>(500, $"An unexpected error occurred while processing your request, Error: {ex.Message}");
+            }
+        }
 
         //    #region Helper Methods
 

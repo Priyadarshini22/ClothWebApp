@@ -3,18 +3,39 @@ import { Link, NavLink, useNavigate } from 'react-router-dom'
 import {assets} from '../assets/assets';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCustomer } from '../reduxStore/customerSlice';
+import { jwtDecode } from 'jwt-decode';
 const Navbar = () => {
 
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart.cart);
   const customer = useSelector((state) => state.customer.customer);
       const dispatch = useDispatch();
-    useEffect(() => {
-      console.log(customer)
+  useEffect(() => {
+      const stored = localStorage.getItem("customer");
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        const tokenExpired = isTokenExpired(parsed.Token);
+        if (tokenExpired) {
+          localStorage.removeItem("customer");
+          dispatch(setCustomer(null));
+        } else {
+          dispatch(setCustomer(parsed));
+        }
+      }
+    console.log(customer)
           // dispatch(fetchProductsFromAPI());
-    }, [customer])
+    }, [])
 
-
+  const isTokenExpired = (token) => {
+  try {
+    const { exp } = jwtDecode(token);
+        console.log("Token expiration:", exp);
+    console.log("Current time:", Math.floor(Date.now() / 1000));
+    return Date.now() / 1000 > exp;
+  } catch {
+    return true; // Treat as expired if decoding fails
+  }
+};
   const handleLogOut = () => {
       localStorage.removeItem("customer");
       dispatch(setCustomer(null));
@@ -50,7 +71,7 @@ const Navbar = () => {
                  <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
                    <div className='flex flex-col  gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500'>
                      <p className=' cursor-pointer hover:text-black' onClick={() => navigate('/profile')}>My Profile</p>
-                     <p className=' cursor-pointer hover:text-black'>My Orders</p>
+                     <p className=' cursor-pointer hover:text-black' onClick={() => navigate('/orders')}>My Orders</p>
                      <p className=' cursor-pointer hover:text-black' onClick={handleLogOut}>Logout</p>
                    </div>
                  </div>

@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
@@ -30,8 +31,6 @@ export const {setPayment, setLoader, setClientSecret} = paymentSlice.actions
 
 
 export const createPayment = (payload,navigate) => async (dispatch) => {
-  debugger
-
   try{
      const res =  await axios.post(`${API_BASE_URL}/api/Payments/CreatePayment`,payload, {
       headers: { Authorization: `Bearer ${payload.authToken}` },
@@ -57,10 +56,10 @@ export const processStripePayment = (payload, navigate) => async (dispatch) => {
 
     if (res.data?.StatusCode === 200) {
       dispatch(setPayment(res.data.Data));
-      alert("Payment successful!");
+      toast.success("Payment successful!");
       // navigate(`/order-confirmation/${orderId}`);
     } else {
-      alert("Payment failed: " + res.data?.Message);
+      toast.err("Payment failed: " + res.data?.Message);
     }
   } catch (err) {
     console.error("Payment Error:", err);

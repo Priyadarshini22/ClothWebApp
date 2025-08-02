@@ -4,14 +4,15 @@ using ECommerceApp.DTOs;
 using ECommerceApp.DTOs.OrderDTOs;
 using ECommerceApp.DTOs.ProductDTOs;
 using ECommerceApp.Models;
+using System.Data.Common;
 
 namespace ECommerceApp.Repository
 {
     public interface IOrderRepository
     {
         Task<int> CreateOrderAsync(Order orderDto);
-
         Task<OrderResponseDTO> GetOrderByIdAsync(int Id);
+        Task<List<OrderResponseDTO>> GetOrdersByCustomerAsync(int customerId);
 
     }
     public class OrderRepository : IOrderRepository
@@ -38,7 +39,7 @@ namespace ECommerceApp.Repository
             VALUES 
             (@OrderNumber, @OrderDate, @CustomerId, @BillingAddressId, @ShippingAddressId, @TotalBaseAmount, @TotalDiscountAmount, @ShippingCost, @TotalAmount, @OrderStatus)";
 
-                 orderId = await dbConnection.ExecuteScalarAsync<int>(insertOrderQuery, new
+                orderId = await dbConnection.ExecuteScalarAsync<int>(insertOrderQuery, new
                 {
                     OrderNumber = orderNumber,
                     OrderDate = DateTime.UtcNow,
@@ -80,7 +81,6 @@ namespace ECommerceApp.Repository
                 throw;
             }
         }
-
         public async Task<OrderResponseDTO> GetOrderByIdAsync(int Id)
         {
             using var dbConnection = _dbContext.CreateConnection();
@@ -96,5 +96,21 @@ namespace ECommerceApp.Repository
             }
         }
 
+        public async Task<List<OrderResponseDTO>> GetOrdersByCustomerAsync(int customerId)
+        {
+
+              using var dbConnection = _dbContext.CreateConnection();
+              dbConnection.Open();
+              try
+              {
+                  var sQuery = "select * from Orders where CustomerId = @customerId";
+                  return (List<OrderResponseDTO>)await dbConnection.QueryAsync<OrderResponseDTO>(sQuery, new { customerId });
+              }
+              catch
+              {
+                throw;
+              }
+
+        }
     }
 }

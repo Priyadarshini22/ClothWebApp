@@ -83,15 +83,15 @@ namespace ECommerceApp.Controllers
 
         //// Retrieves all orders for a specific customer.
         //// GET: api/Orders/GetOrdersByCustomer/{customerId}
-        //[HttpGet("GetOrdersByCustomer/{customerId}")]
-        //public async Task<ActionResult<ApiResponse<List<OrderResponseDTO>>>> GetOrdersByCustomer(int customerId)
-        //{
-        //    var response = await _orderService.GetOrdersByCustomerAsync(customerId);
-        //    if (response.StatusCode != 200)
-        //    {
-        //        return StatusCode(response.StatusCode, response);
-        //    }
-        //    return Ok(response);
-        //}
+        [HttpGet("GetOrdersByCustomer/{customerId}")]
+        public async Task<ActionResult<ApiResponse<List<OrderResponseDTO>>>> GetOrdersByCustomer(int customerId)
+        {
+            var response = await _orderService.GetOrdersByCustomerAsync(customerId);
+            if (response.StatusCode != 200)
+            {
+                return StatusCode(response.StatusCode, response);
+            }
+            return Ok(response);
+        }
     }
 }

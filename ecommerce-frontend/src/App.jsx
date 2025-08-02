@@ -63,6 +63,7 @@ const App = () => {
       <Route path="/add-address" element={<AddAddress />} />
       <Route path="/payment/:orderId"   element={<Elements stripe={stripePromise}><PaymentPage /></Elements>} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/orders" element={<Orders />} />
 
     </Routes>
     <ToastContainer/>

@@ -9,7 +9,8 @@ export const orderSlice = createSlice({
     initialState: {
        order: null,
        loader: false,
-       orderNumber: 0.
+       orderNumber: 0,
+       orders: []
     },
     reducers:{
        setOrder: (state,action) => {
@@ -21,12 +22,15 @@ export const orderSlice = createSlice({
        setOrderNumber: (state,action) => {
             state.order = action.payload 
        },
+       setOrders: (state,action) => {
+        state.orders = action.payload
+       }
     }
 
 })
 
 
-export const {setOrder, setLoader, setOrderNumber} = orderSlice.actions
+export const {setOrder, setLoader, setOrderNumber, setOrders} = orderSlice.actions
 
 export const createOrder = (newOrder,navigate,token) => async (dispatch) => {
 
@@ -50,7 +54,6 @@ export const createOrder = (newOrder,navigate,token) => async (dispatch) => {
 };
 
 export const getOrderById = (orderId,token) => async(dispatch) => {
-  debugger
   console.log(orderId)
   try{
       axios
@@ -66,6 +69,22 @@ export const getOrderById = (orderId,token) => async(dispatch) => {
 }
 
 
+export const getOrdersByCustomerId = (customerId, token) => async(dispatch) => {
+    try {
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_BASE_URL}/api/Orders/GetOrdersByCustomer/${customerId}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
+      console.log(res)
+      dispatch(setOrders(res.data?.Data ?? []));
+    } catch (err) {
+        console.log("Order failed",err)
+    }
+  }
 
 
 export default orderSlice.reducer
